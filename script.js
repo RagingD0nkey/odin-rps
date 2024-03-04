@@ -1,6 +1,18 @@
+/*
+ROCK PAPER SCISSORS GAME
+2024-03-04
+RagingD0nkey
+*/
+
+
+// Initialize global var : number of round, both score
+
 let gameRound = 0;
 let playerScore =0;
 let computerScore =0;
+const numberRounds = 5;
+
+// Get computer choice via a pseudo-random allocation
 
 function getComputerChoice() {
     let tempCompChoice = Math.floor(Math.random() * 3);
@@ -16,8 +28,10 @@ function getComputerChoice() {
       }
 }
 
+// Get player choice via prompt - the first letter of the choice "R" for "Rock" for example is also accepted
+
 function getPlayerChoice() {
-    let tempPlayerChoice = prompt("Please enter your choice : [Rock], [Paper] or [Scissors]").toUpperCase();
+    let tempPlayerChoice = String(prompt("Please enter your choice : [Rock], [Paper] or [Scissors]")).toUpperCase();
     
     if ((tempPlayerChoice ==="ROCK") || (tempPlayerChoice ==="PAPER") || (tempPlayerChoice ==="SCISSORS")) {
         return tempPlayerChoice;
@@ -36,9 +50,9 @@ function getPlayerChoice() {
         alert("Only valid choices are [Rock], [Paper], [Scissors] or [R], [P], [S]");
         return getPlayerChoice();
     }
-
-
 }
+
+// Compare player to computer choice. Keep track of score
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice===computerChoice) {
@@ -77,7 +91,7 @@ function playRound(playerChoice, computerChoice) {
       }
 }
 
-
+// Main function - encompassing player & computer choices and game rounds
 function playGame() {
     let playerChoice = getPlayerChoice();
     let computerChoice = getComputerChoice();
@@ -87,9 +101,13 @@ function playGame() {
     console.log("Computer : " + computerScore + " | Player : " + playerScore);
 }
 
-for (i=0;i<5;i++) {
+
+
+for (i=0;i<numberRounds;i++) {
     playGame();
 }
+
+// Display winner and final scores
 
 let finalScore = (computerScore,playerScore) => {
     if (computerScore==playerScore) {
@@ -103,4 +121,5 @@ let finalScore = (computerScore,playerScore) => {
     }
 };
 
-alert (`Final score is : Computer ${computerScore} vs Player ${playerScore} ! \n ${finalScore(computerScore,playerScore)}`)
+alert (`Final score is : Computer ${computerScore} vs Player ${playerScore} ! \n 
+        ${finalScore(computerScore,playerScore)}`)
