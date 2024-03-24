@@ -5,7 +5,7 @@ RagingD0nkey
 */
 
 
-// Initialize global var : number of round, both score
+// Initialize global var : number of rounds, both score
 
 let gameRound = 0;
 let playerScore =0;
@@ -55,6 +55,7 @@ function getPlayerChoice() {
 // Compare player to computer choice. Keep track of score
 
 function playRound(playerChoice, computerChoice) {
+    
     if (playerChoice===computerChoice) {
         return "Tie !"
     }
