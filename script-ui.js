@@ -18,6 +18,9 @@ function getComputerChoice() {
       }
 }
 
+
+// Get player choice via buttons
+
 const playerChoice = document.querySelector(".player-choice");
 
 playerChoice.addEventListener("click", function(e){
@@ -31,7 +34,13 @@ playerChoice.addEventListener("click", function(e){
 function playRound(playerChoice, computerChoice) {
 
     let resultsDisplay = document.querySelector(".results");
-    console.log(resultsDisplay.className);
+    let playerScoreDisplay = document.querySelector(".player-score");
+    let computerScoreDisplay = document.querySelector(".computer-score");
+
+
+    console.log(computerScore + " " + computerChoice);
+    console.log(playerScore + " " + playerChoice);
+
     if (playerChoice===computerChoice) {
         resultsDisplay.textContent = "Tie !"
     }
@@ -39,31 +48,41 @@ function playRound(playerChoice, computerChoice) {
         case "ROCK":
             if (computerChoice==="PAPER") {
                 computerScore++;
+                computerScoreDisplay.textContent = computerScore;
                 resultsDisplay.textContent = "Player Loses!"
             }
             else if (computerChoice==="SCISSORS") {
                 playerScore++;
+                playerScoreDisplay.textContent = playerScore;
                 resultsDisplay.textContent = "Player Wins!"
             }
+            break;
         case "PAPER":
             if (computerChoice==="SCISSORS") {
                 computerScore++;
+                computerScoreDisplay.textContent = computerScore;
                 resultsDisplay.textContent = "Player Loses!"
             }
             else if (computerChoice==="ROCK") {
                 playerScore++;
+                playerScoreDisplay.textContent = playerScore;
                 resultsDisplay.textContent = "Player Wins!"
             }
+            break;
         case "SCISSORS":
             if (computerChoice==="ROCK") {
                 computerScore++;
+                computerScoreDisplay.textContent = computerScore;
                 resultsDisplay.textContent = "Player Loses!"
             }
             else if (computerChoice==="PAPER") {
                 playerScore++;
+                playerScoreDisplay.textContent = playerScore;
                 resultsDisplay.textContent = "Player Wins!"
             }
-
+            break;
       }
+    console.log(computerScore + " " + computerChoice);
+    console.log(playerScore + " " + playerChoice);
 }
 
