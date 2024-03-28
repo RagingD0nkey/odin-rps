@@ -42,43 +42,43 @@ function playRound(playerChoice, computerChoice) {
     console.log(playerScore + " " + playerChoice);
 
     if (playerChoice===computerChoice) {
-        resultsDisplay.textContent = "Tie !"
+        resultsDisplay.textContent = "Players used "+playerChoice+". Computer used "+computerChoice+". Tie !"
     }
     switch (playerChoice) {
         case "ROCK":
             if (computerChoice==="PAPER") {
                 computerScore++;
                 computerScoreDisplay.textContent = computerScore;
-                resultsDisplay.textContent = "Player Loses!"
+                resultsDisplay.textContent = "Players used "+playerChoice+". Computer used "+computerChoice+". Player Loses!"
             }
             else if (computerChoice==="SCISSORS") {
                 playerScore++;
                 playerScoreDisplay.textContent = playerScore;
-                resultsDisplay.textContent = "Player Wins!"
+                resultsDisplay.textContent = "Players used "+playerChoice+". Computer used "+computerChoice+". Player Wins!"
             }
             break;
         case "PAPER":
             if (computerChoice==="SCISSORS") {
                 computerScore++;
                 computerScoreDisplay.textContent = computerScore;
-                resultsDisplay.textContent = "Player Loses!"
+                resultsDisplay.textContent = "Players used "+playerChoice+". Computer used "+computerChoice+". Player Loses!"
             }
             else if (computerChoice==="ROCK") {
                 playerScore++;
                 playerScoreDisplay.textContent = playerScore;
-                resultsDisplay.textContent = "Player Wins!"
+                resultsDisplay.textContent = "Players used "+playerChoice+". Computer used "+computerChoice+". Player Wins!"
             }
             break;
         case "SCISSORS":
             if (computerChoice==="ROCK") {
                 computerScore++;
                 computerScoreDisplay.textContent = computerScore;
-                resultsDisplay.textContent = "Player Loses!"
+                resultsDisplay.textContent = "Players used "+playerChoice+". Computer used "+computerChoice+". Player Loses!"
             }
             else if (computerChoice==="PAPER") {
                 playerScore++;
                 playerScoreDisplay.textContent = playerScore;
-                resultsDisplay.textContent = "Player Wins!"
+                resultsDisplay.textContent = "Players used "+playerChoice+". Computer used "+computerChoice+". Player Wins!"
             }
             break;
       }
