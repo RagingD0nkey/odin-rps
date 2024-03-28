@@ -1,0 +1,12 @@
+.scores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+.scores,
+.player-choice,
+.results {
+    margin: 5px;
+    padding: 2px;
+}
